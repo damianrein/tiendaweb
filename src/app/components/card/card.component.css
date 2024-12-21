@@ -1,0 +1,42 @@
+/* Contenedor principal */
+.card-container {
+    padding: 20px;
+    background-color: #222;
+    color: #fff;
+    min-height: 100vh;
+  }
+  
+  /* Grid de tarjetas */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Paginación */
+  .pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .pagination button {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pagination button:hover {
+    background-color: #666;
+  }
+  
+  .pagination button.active {
+    background-color: #ff9800;
+    color: #333;
+  }
+  
