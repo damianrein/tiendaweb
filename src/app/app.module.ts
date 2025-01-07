@@ -10,6 +10,8 @@ import { ProductComponent } from './pages/product/product.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeadComponent } from './components/head/head.component';
 import { CardComponent } from './components/card/card.component';
+import { CardContainerComponent } from './components/card-container/card-container.component';
+import { CommentCartComponent } from './components/comment-cart/comment-cart.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { CardComponent } from './components/card/card.component';
     HomeComponent,
     ProductComponent,
     HeadComponent,
-    CardComponent
+    CardComponent,
+    CardContainerComponent,
+    CommentCartComponent
   ],
   imports: [
     BrowserModule,
