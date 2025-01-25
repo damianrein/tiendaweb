@@ -9,6 +9,14 @@
           <li><a href="#">Contacto</a></li>
           <li><a href="#">Iniciar Sesion</a></li>
       </ul>
+            <!-- Ícono del carrito -->
+        <div>
+            <button class="icon-button" (click)="toggleCart()">
+                <picture>
+                    <img class="cart-icon" src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png" alt="cart">
+                </picture>
+            </button>
+        </div>
       <div class="navbar-toggle" id="navbar-toggle" (click)="toggleMenu()">
           <span></span>
           <span></span>
@@ -16,3 +24,8 @@
       </div>
   </div>
 </nav>
+
+<!-- Carrito -->
+<div class="cart-container" [ngClass]="{ 'cart-active': isCartVisible }">
+    <app-cart></app-cart>
+</div>

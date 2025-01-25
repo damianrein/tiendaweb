@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -8,10 +9,13 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, private router:Router) { }
 
   ngOnInit(): void {
     this.api.fetchProducts;
   }
 
+  goToProductDetail(productId: number): void {
+    this.router.navigate([`/product/${productId}`]);
+  }
 }

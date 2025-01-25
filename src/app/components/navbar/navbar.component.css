@@ -4,11 +4,11 @@
     top: 0;
     left: 0;
     z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.5); /* Transparente */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo transparente */
     padding: 10px 20px;
 }
 
-/* Contenedor de la barra */
+/* Contenedor principal del navbar */
 .navbar-container {
     display: flex;
     justify-content: space-between;
@@ -43,10 +43,55 @@
 }
 
 .navbar-menu a:hover {
-    color: #ff6347; /* Cambio de color al pasar el cursor */
+    color: #ff6347; /* Color al pasar el mouse */
 }
 
-/* Estilos para el toggle  */
+/* Botón del carrito */
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.icon-button:hover {
+    transform: scale(1.1);
+}
+
+.cart-icon {
+    width: 32px;
+    height: 32px;
+}
+
+/* Contenedor del carrito */
+.cart-container {
+    position: absolute;
+    top: 70px; /* Ajusta según la altura del navbar */
+    right: 20px;
+    display: none;
+    z-index: 999;
+    width: 350px;
+}
+
+/* Mostrar el carrito cuando esté activo */
+.cart-container.cart-active {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ajustes para el toggle del menú */
 .navbar-toggle {
     display: none;
     flex-direction: column;
