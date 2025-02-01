@@ -1,13 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product';
 import { ApiService } from 'src/app/services/api/api.service';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  styleUrls: ['./cart.component.css'],
+  standalone:false
 })
 export class CartComponent implements OnInit {
+checkout() {
+throw new Error('Method not implemented.');
+}
+removeFromCart(arg0: number) {
+throw new Error('Method not implemented.');
+}
 
   cart: Product[] = [];
   total: number = 0;
@@ -15,31 +23,6 @@ export class CartComponent implements OnInit {
   constructor(private cartService: ApiService) {}
 
   ngOnInit() {
-    this.cart = this.cartService.getCart();
-    this.updateTotal();
   }
 
-  removeFromCart(productId: number) {
-    this.cartService.removeFromCart(productId);
-    this.updateCart();
-  }
-
-  updateCart() {
-    this.cart = this.cartService.getCart();
-    this.updateTotal();
-  }
-
-  updateTotal() {
-    this.total = this.cart.reduce((sum, product) => sum + product.price * product.quantity, 0);
-  }
-
-  checkout() {
-    this.cartService.checkout().subscribe(response => {
-      console.log('Compra realizada con éxito:', response);
-      this.cartService.clearCart();
-      this.updateCart();
-    }, error => {
-      console.error('Error al realizar la compra:', error);
-    });
-  }
 }

@@ -4,7 +4,8 @@ import { Comments } from 'src/app/models/comments';
 @Component({
   selector: 'app-comment-cart',
   templateUrl: './comment-cart.component.html',
-  styleUrls: ['./comment-cart.component.css']
+  styleUrls: ['./comment-cart.component.css'],
+  standalone:false
 })
 export class CommentCartComponent implements OnInit {
 

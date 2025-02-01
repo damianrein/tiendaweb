@@ -1,0 +1,6 @@
+<div class="review-container">
+    <div class="grip" *ngFor="let comment of comments" [attr.key]="comment.id">
+      <app-comment-cart [comment]="comment"></app-comment-cart>
+    </div>
+  </div>
+  

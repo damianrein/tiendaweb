@@ -13,6 +13,7 @@ import { CardComponent } from './components/card/card.component';
 import { CardContainerComponent } from './components/card-container/card-container.component';
 import { CommentCartComponent } from './components/comment-cart/comment-cart.component';
 import { CartComponent } from './components/cart/cart.component';
+import { ReviewsComponent } from './components/reviews/reviews.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CartComponent } from './components/cart/cart.component';
     CardComponent,
     CardContainerComponent,
     CommentCartComponent,
-    CartComponent
+    CartComponent,
+    ReviewsComponent
   ],
   imports: [
     BrowserModule,

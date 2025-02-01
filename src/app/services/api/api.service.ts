@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 import { Product } from '../../models/product';
+import { Comments } from 'src/app/models/comments';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,8 @@ export class ApiService {
   private cart: Product[] = [];
   
   private url = 'https://dummyjson.com/products';
+
+  private url2 = 'http://localhost:8080';
 
   constructor(private http:HttpClient) { }
 
@@ -30,28 +33,12 @@ export class ApiService {
     );
   }
 
-  addToCart(product: Product) {
-    const existingProduct = this.cart.find(p => p.id === product.id);
-    if (existingProduct) {
-      existingProduct.quantity += 1;
-    } else {
-      this.cart.push({ ...product, quantity: 1 });
-    }
-  }
+/*
+================================================================================================================
+===================API PROPIA ==================================================================================
+*/
 
-  removeFromCart(productId: number) {
-    this.cart = this.cart.filter(p => p.id !== productId);
-  }
-
-  getCart() {
-    return [...this.cart];
-  }
-
-  clearCart() {
-    this.cart = [];
-  }
-
-  checkout(): Observable<any> {
-    return this.http.post('/api/checkout', { products: this.cart });
+  fetchComments(idProduct: number):Observable<Comments[]>{
+    return this.http.get<Comments[]>('$this.url2/comments/${idProduct}');
   }
 }

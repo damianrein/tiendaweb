@@ -11,11 +11,11 @@
       </ul>
             <!-- Ícono del carrito -->
         <div>
-            <button class="icon-button" (click)="toggleCart()">
+            <a routerLink="/cart" class="icon-button">
                 <picture>
                     <img class="cart-icon" src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png" alt="cart">
                 </picture>
-            </button>
+            </a>
         </div>
       <div class="navbar-toggle" id="navbar-toggle" (click)="toggleMenu()">
           <span></span>
@@ -25,8 +25,4 @@
   </div>
 </nav>
 
-<!-- Carrito -->
-<div class="cart-container" [ngClass]="{ 'cart-active': isCartVisible }">
-    <app-cart></app-cart>
-</div>
 

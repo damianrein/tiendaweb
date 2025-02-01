@@ -5,7 +5,8 @@ import { ApiService } from 'src/app/services/api/api.service';
 @Component({
   selector: 'app-card-container',
   templateUrl: './card-container.component.html',
-  styleUrls: ['./card-container.component.css']
+  styleUrls: ['./card-container.component.css'],
+  standalone:false
 })
 export class CardContainerComponent implements OnInit {
 
