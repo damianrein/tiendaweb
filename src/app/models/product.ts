@@ -6,7 +6,7 @@ export interface Product {
     name:string,
     price:number,
     description:string,
-    photos:Photo,//[]
+    photos:string,//[]
     comments:Comments[]
 }
 export interface Photo {

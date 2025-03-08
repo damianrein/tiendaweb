@@ -17,6 +17,14 @@
     margin: 0 auto;
     padding: 0 20px;
 }
+.search input{
+    border-radius: 1em;
+    width: 250px;
+    height: 35px;
+}
+.search ::placeholder{
+    text-align: center;
+}
 
 /* Logo */
 .navbar-logo a {
@@ -29,6 +37,7 @@
 .navbar-menu {
     display: flex;
     list-style: none;
+    justify-content: right;
 }
 
 .navbar-menu li {

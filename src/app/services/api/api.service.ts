@@ -11,7 +11,8 @@ export class ApiService {
 
   private cart: Product[] = [];
   
-  private url = 'https://dummyjson.com/products';
+  //private url = 'https://dummyjson.com/products';
+  private url = 'https://fakestoreapi.com/products';
 
   private url2 = 'http://localhost:8080';
 
@@ -23,13 +24,26 @@ export class ApiService {
 
   fetchProducts(): Observable<Product[]> {
     return this.http.get(this.url).pipe(
-      map((response: any) => response.products.map((product: any) => ({
+      map((response: any) => response.map((product: any) => ({
         id: product.id,
         name: product.title,
         price: product.price,
         description: product.description,
-        photos: product.images.map((image: string) => ({ id: 1, url: image }))
+        photos: product.image
       } as Product)))
+    );
+  }
+
+  fetchProductById(id:number):Observable<Product>{
+    const urls =  `${this.url}/${id}`;
+    return this.http.get<any>(urls).pipe(
+      map((product: any) => ({
+        id: product.id,
+        name: product.title,
+        price: product.price,
+        description: product.description,
+        photos: product.image 
+      } as Product))
     );
   }
 
@@ -38,7 +52,7 @@ export class ApiService {
 ===================API PROPIA ==================================================================================
 */
 
-  fetchComments(idProduct: number):Observable<Comments[]>{
-    return this.http.get<Comments[]>('$this.url2/comments/${idProduct}');
-  }
+  //fetchComments(idProduct: number):Observable<Comments[]>{
+  //  return this.http.get<Comments[]>('$this.url2/comments/${idProduct}');
+ // }
 }

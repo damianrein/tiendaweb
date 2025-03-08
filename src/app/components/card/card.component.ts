@@ -18,9 +18,18 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+/*
   goToProductDetail(productId: number): void {
     this.router.navigate([`/product/${productId}`]);
   }
+    goToProductDetail(): void {
+    this.router.navigate(['/product', this.product?.id], { state: { product: this.product } });
+*/
+
+goToProductDetail(): void {
+  this.router.navigate(['/product', this.product?.id]);
 }
+  }
+
+
 

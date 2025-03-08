@@ -1,1 +1,6 @@
-<app-card-container></app-card-container>
+<!--<app-card-container></app-card-container>>-->
+<div class="card-container">
+    <div class="grid" *ngFor="let product of products" [attr.key]="product.id">
+        <app-card [product]="product"></app-card>
+    </div>
+</div>

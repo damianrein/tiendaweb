@@ -1,17 +1,17 @@
-<div>
-    <div>
-        <div>
+<div class="container">
+    <div class="product">
+        <div class="name">
             <h2>{{product?.name}}</h2>
         </div>
-        <div>
-            <picture>
-                <img [src]="product?.photos?.url" alt="product">
+        <div class="pic-container">
+            <picture class="picture">
+                <img class="img" [src]="product?.photos" alt="product">
             </picture>
         </div>
-        <div>
+        <div class="description">
             {{product?.description}}
         </div>
-        <div>
+        <div class="price">
             {{product?.price}}
         </div>
         <div>
