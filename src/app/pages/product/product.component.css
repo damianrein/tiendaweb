@@ -3,11 +3,52 @@ width: 100%;
 }
 .product{
     display: flex;
-
+    align-items: center;
     width: 90%;
     justify-content: center;
+}
+.name{
+    margin-bottom: 1em;
 }
 .img {
     max-height: 500px;
     width: auto;
+}
+.aside {
+    background-color: #d9d9d9;
+    width: 400px;
+    height: 500px;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.name, .description, .price {
+    text-align: center;
+}
+
+.buttons {
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+}
+.comprar{
+    background-color: #0400ff;
+    border-radius: 1em;
+    width: fit-content;
+}
+.comprar button{
+    color: #ffffff;
+    padding: 1em;
+}
+.agregar{
+    background-color: #0400ff;
+    border-radius: 1em;
+    width: fit-content;
+}
+.agregar button{
+    color: #ffffff;
+    padding: 1em;
 }

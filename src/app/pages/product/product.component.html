@@ -1,23 +1,26 @@
 <div class="container">
     <div class="product">
-        <div class="name">
-            <h2>{{product?.name}}</h2>
-        </div>
+
         <div class="pic-container">
             <picture class="picture">
                 <img class="img" [src]="product?.photos" alt="product">
             </picture>
         </div>
-        <div class="description">
-            {{product?.description}}
-        </div>
-        <div class="price">
-            {{product?.price}}
-        </div>
-        <div>
-            <div><button>Comprar ahora</button></div>
-            <div><button>Agregar al carrito</button></div>
-        </div>
+        <aside class="aside">
+            <div class="name">
+                <h2>{{product?.name}}</h2>
+            </div>
+            <div class="description">
+                <p>{{product?.description}}</p>
+            </div>
+            <div class="price">
+                Precio: {{product?.price}}
+            </div>
+            <div class="buttons">
+                <div class="comprar"><button>Comprar ahora</button></div>
+                <div class="agregar"><button>Agregar al carrito</button></div>
+            </div>
+        </aside>
     </div>
     <div>
         <div *ngFor="let comment of product?.comments">
